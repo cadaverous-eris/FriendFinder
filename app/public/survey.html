@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Friend Finder</title>
+
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="https://use.fontawesome.com/a50ca22383.js"></script>
+
+		<style>
+			label {
+				font-weight: 400;
+				font-size: 18px;
+			}
+
+			.btn {
+				font-size: 18px;
+				padding: 10px;
+			}
+
+			.pop-up {
+				position: fixed;
+				background: #dddddd;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.photo {
+				max-width: 400px;
+				max-height: 400px;
+				width: auto;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='container' id='main-content' style="margin-bottom: 10px;">
+			<h2>Survey Questions</h2><hr>
+			
+			<h3 style="font-weight: 600;">About You</h3>
+			<div class='form-group'>
+				<label for="name-input">Name (Required)</label>
+				<input type="text" class='form-control' id='name-input' name='name');>
+			</div>
+			<div class='form-group'>
+				<label for="photo-input">Link to Your Photo Image (Required)</label>
+				<input type="text" class='form-control' id='photo-input' name='photo');>
+			</div>
+			<hr>
+
+			<h3 style="font-weight: 600;">Question 1</h3>
+			<div class='form-group'>
+				<label for="q1-input">Life is pain.</label>
+				<select class='form-control' id='q1-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 2</h3>
+			<div class='form-group'>
+				<label for="q2-input">You prefer solitude.</label>
+				<select class='form-control' id='q2-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 3</h3>
+			<div class='form-group'>
+				<label for="q3-input">You're afraid that if you say what you really think, you'll hurt those closest to you.</label>
+				<select class='form-control' id='q3-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 4</h3>
+			<div class='form-group'>
+				<label for="q4-input">You often wonder why you were born.</label>
+				<select class='form-control' id='q4-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 5</h3>
+			<div class='form-group'>
+				<label for="q5-input">You like to imagine what other peoples' lives would be like if they never met you.</label>
+				<select class='form-control' id='q5-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 6</h3>
+			<div class='form-group'>
+				<label for="q6-input">You know that there's something wrong with you, you just refuse to try and fix it.</label>
+				<select class='form-control' id='q6-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 7</h3>
+			<div class='form-group'>
+				<label for="q7-input">You often go days without speaking to other people.</label>
+				<select class='form-control' id='q7-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 8</h3>
+			<div class='form-group'>
+				<label for="q8-input">You hate the person you are now, but are afraid of who you might become if you try to change.</label>
+				<select class='form-control' id='q8-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 9</h3>
+			<div class='form-group'>
+				<label for="q9-input">You think you might be a bad person.</label>
+				<select class='form-control' id='q9-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<h3 style="font-weight: 600;">Question 10</h3>
+			<div class='form-group'>
+				<label for="q10-input">You know that everything that has gone wrong in your life is your own fault.</label>
+				<select class='form-control' id='q10-input'>
+					<option value='' selected disabled hidden>Select an Option</option>
+					<option value='1'>1 (Strongly Disagree)</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5 (Strongly Agree)</option>
+				</select>
+			</div>
+			<button type="submit" class='btn btn-primary submit' id='submit' style="width: 100%;"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+			<hr>
+
+			<footer class='footer'>
+				<div class='container'>
+					<a href='/api/friends'>API Friends List</a> | <a href='https://github.com/the-realest-stu/FriendFinder'>GitHub Repo</a>
+				</div>
+			</footer>
+		</div>
+
+		<script type="text/javascript">
+			$("#submit").on('click', function() {
+
+				if (!($("#name-input").val() || $("#name-input").val().trim() === '')
+				 || (!$("#photo-input").val() || $("#photo-input").val().trim() === '')
+				 || (!$("#q1-input").val() || $("#q1-input").val().trim() === '')
+				 || (!$("#q2-input").val() || $("#q2-input").val().trim() === '')
+				 || (!$("#q3-input").val() || $("#q3-input").val().trim() === '')
+				 || (!$("#q4-input").val() || $("#q4-input").val().trim() === '')
+				 || (!$("#q5-input").val() || $("#q5-input").val().trim() === '')
+				 || (!$("#q6-input").val() || $("#q6-input").val().trim() === '')
+				 || (!$("#q7-input").val() || $("#q7-input").val().trim() === '')
+				 || (!$("#q8-input").val() || $("#q8-input").val().trim() === '')
+				 || (!$("#q9-input").val() || $("#q9-input").val().trim() === '')
+				 || (!$("#q10-input").val() || $("#q10-input").val().trim() === '')) {
+					alert("Please fill out all fields before submitting!");
+					return;
+				}
+
+				var friendData = {
+					'name': $('#name-input').val().trim(),
+					'photo': $('#photo-input').val().trim(),
+					'scores': [
+						$("#q1-input").val(),
+						$("#q2-input").val(),
+						$("#q3-input").val(),
+						$("#q4-input").val(),
+						$("#q5-input").val(),
+						$("#q6-input").val(),
+						$("#q7-input").val(),
+						$("#q8-input").val(),
+						$("#q9-input").val(),
+						$("#q10-input").val()
+					]
+				};
+
+				$.ajax({
+					url: '/api/friends',
+					method: 'GET',
+				}).done(function(response) {
+					var data = response;
+
+					var minDif = { val: -1, index: -1 };
+					for (var i = 0; i < data.length; i++) {
+						if (data[i].name != friendData.name) {
+							var total = totalDif(data[i].scores);
+							if (minDif.index < 0 || Math.abs(total) < minDif.val) {
+								minDif = { val: total, index: i };
+							}
+						}
+					}
+
+					if (minDif.index < 0) {
+						alert("No matches found!");
+					} else {
+						var matchVal = 1 - (minDif.val / 40.0);
+						showMatch(data[minDif.index], matchVal);
+					}
+
+			  	    $.post(window.location.origin + "/api/new", friendData, function(data) {
+
+			  	    });
+
+					function totalDif(scores) {
+						var total = 0;
+						for (var i = 0; i < scores.length; i++) {
+							total += Math.abs(parseInt(scores[i]) - parseInt(friendData.scores[i]));
+						}
+						return total;
+					};
+				});
+
+				function showMatch(matchData, matchVal) {
+					var alert = $("<div>").addClass('alert alert-dismissable pop-up');
+					alert.append($("<a>").text("×").attr("href", "#").addClass('close').attr("data-dismiss", "alert").attr("aria-label", "close"));
+					alert.append($("<h2>").text(((matchVal * 100) + "%") + " Match!"));
+					alert.append($("<hr>"));
+					var resultDiv = $("<div>").append($("<h3>").text(matchData.name));
+					resultDiv.append($("<img>").attr("src", matchData.photo).addClass('photo').attr("alt", "Profile Image"));
+					alert.append(resultDiv);
+
+					$("#main-content").append(alert);
+				}
+
+			});
+		</script>
+	</body>
+</html>
